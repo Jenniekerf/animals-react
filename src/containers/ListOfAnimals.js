@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { getAnimals } from '../redux/actions/animals'
+import { connect } from 'react-redux'
 
 class ListOfAnimals extends Component {
+
+componentDidMount() {
+  this.props.getAnimals();
+
+}
+
   render() {
     return (
       <div>
@@ -10,4 +18,4 @@ class ListOfAnimals extends Component {
   }
 }
 
-export default ListOfAnimals;
+export default connect(null, { getAnimals })(ListOfAnimals);
