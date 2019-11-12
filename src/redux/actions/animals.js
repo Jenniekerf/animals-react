@@ -1,25 +1,35 @@
 export const getAnimals = () => {
-  return function(dispatch) {
+  return dispatch => {
 
-    return fetch('http://localhost:3001/animals')
+    fetch(`http://localhost:3001/animals`)
     .then(res => res.json())
-    .then(animals => dispatch({type: 'FETCH_ANIMALS', payload: animals}));
+    .then(animals => dispatch({
+      type: 'FETCH_ANIMALS',
+      payload: animals
+    })
+  );
 
   };
 };
 
-export const addAnimal = aObj => {
-  console.log(aObj);
-  return dispatch => {
-    fetch('http://localhost:3001/animals', {
-      method: "POST",
-      body: JSON.stringify({ animal: aObj })
-  })
-  .then(res => res.json())
-  .then(animal => dispatch({
-    type: 'ANIMAL_CREATED',
-    payload: animal
-  }))
- };
+ export const addAnimal = aObj => {
+   const animalToAdd = { animal: aObj };
+   return dispatch => {
+     fetch(`http://localhost:3001/animals`, {
+       method: 'POST',
+       headers: {
+         Accept: 'application/json',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(animalToAdd)
+     })
 
+  .then(res => res.json())
+  .then(animal =>
+     dispatch({
+       type: 'ANIMAL_ADDED',
+       payload: animal
+   })
+ );
+};
 };

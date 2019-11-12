@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
 import NewAnimal from './components/NewAnimal';
 import ListOfAnimals from './containers/ListOfAnimals';
+import { connect } from 'react-redux';
+import { getAnimals } from './redux/actions/animals'
 
 function App() {
   return (
