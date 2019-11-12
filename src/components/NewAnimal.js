@@ -12,18 +12,29 @@ class NewAnimal extends Component {
   };
   render() {
     return (
-      <div>
+      <div class="container">
         <form>
+        <div class="form-group">
         <label>Name:</label>
-        <input type="text" name="name" value={this.state.name} />
+        <input type="text" class="form-control" name="name" value={this.state.name} />
+        </div>
+        <div class="form-group">
         <label>Type of Animal:</label>
-        <input type="text" name="animal_type" value={this.state.animal_type} />
+        <input type="text" class="form-control" name="animal_type" value={this.state.animal_type} />
+        </div>
+        <div class="form-group">
         <label>Color:</label>
-        <input type="text" name="color" value={this.state.color} />
+        <input type="text" class="form-control" name="color" value={this.state.color} />
+        </div>
+        <div class="form-group">
         <label>Size:</label>
-        <input type="text" name="size" value={this.state.size} />
+        <input type="text" class="form-control" name="size" value={this.state.size} />
+        </div>
+        <div class="form-group">
         <label>Description:</label>
-        <input type="text" name="description" value={this.state.description} />
+        <input type="text" id="inputlg" class="form-control input-lg" name="description" value={this.state.description} />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Animal</button>
         </form>
       </div>
     )
