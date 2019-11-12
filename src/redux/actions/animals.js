@@ -3,7 +3,9 @@ export const getAnimals = () => {
 
     return fetch('http://localhost:3001/animals')
     .then(res => res.json())
-    .then(animals => console.log(animals))
+    .then(animals => dispatch({type: 'FETCH_ANIMALS', payload: animals}));
 
   };
 };
+
+export const addAnimal = () => {};
