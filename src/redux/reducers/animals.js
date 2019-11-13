@@ -4,8 +4,7 @@ export default (state = [], action) => {
     case 'FETCH_ANIMALS':
       return action.payload
     case 'ADD_ANIMAL':
-    console.log("adding")
-      return state;
+      return [...state, action.payload];
     default:
       return state;
   }

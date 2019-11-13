@@ -9,8 +9,12 @@ import ListOfAnimals from './containers/ListOfAnimals';
 import { connect } from 'react-redux';
 import { getAnimals } from './redux/actions/animals'
 
-function App() {
-  return (
+class App extends React.Component {
+  componentDidMount() {
+    this.props.getAnimals();
+  }
+  render() {
+    return (
     <div className="App">
       <Router>
         <Route exact path="/" component={Home} />
@@ -20,6 +24,10 @@ function App() {
 
     </div>
   );
+ }
 }
 
-export default App;
+export default connect(
+  null,
+   { getAnimals }
+)(App);

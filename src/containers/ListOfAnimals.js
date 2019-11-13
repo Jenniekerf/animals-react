@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import { getAnimals } from '../redux/actions/animals'
 import { connect } from 'react-redux'
 
 class ListOfAnimals extends Component {
-
-componentDidMount() {
-  this.props.getAnimals();
-
-}
-
   render() {
     if (this.props.animals.length === 0) {
       return <p>Loading..</p>;
@@ -30,5 +23,4 @@ return {
   };
 };
 
-export default connect(
-  mapStateToProps, { getAnimals })(ListOfAnimals);
+export default connect(mapStateToPropsgetAnimal)(ListOfAnimals);
