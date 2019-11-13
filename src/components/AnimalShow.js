@@ -1,11 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function AnimalShow() {
+function AnimalShow(props) {
+  if (!props.animal) {
+    return <p>Loading...</p>
+  }
   return (
     <div>
        <h1>Animal Info</h1>
+       <p>{props.animal.name}</p>
+       <p>{props.animal.size}</p>
     </div>
   )
 }
 
-export default AnimalShow
+const mapStateToProps = (state, props) => {
+    const id = props.match.params.id;
+    const animal = state.filter(animal => animal.id == id)[0];
+    return {
+      animal
+  };
+};
+
+export default connect(mapStateToProps)(AnimalShow)

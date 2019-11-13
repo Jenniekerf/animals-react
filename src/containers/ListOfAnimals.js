@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 class ListOfAnimals extends Component {
   render() {
@@ -10,7 +11,8 @@ class ListOfAnimals extends Component {
       <div>
         <h1>List Of Animals</h1>
         {this.props.animals.map(animal => (
-            <p>{animal.name}</p>
+            <p key={animal.id}>
+              <Link to={`/animals/${animal.id}`}>{animal.name}</Link></p>
           ))}
       </div>
     );
