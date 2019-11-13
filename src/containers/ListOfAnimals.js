@@ -23,4 +23,4 @@ return {
   };
 };
 
-export default connect(mapStateToPropsgetAnimal)(ListOfAnimals);
+export default connect(mapStateToProps)(ListOfAnimals);
