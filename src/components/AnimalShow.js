@@ -1,5 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+    background-color: purple
+
+`;
 
 function AnimalShow(props) {
   if (!props.animal) {
@@ -10,6 +16,7 @@ function AnimalShow(props) {
        <h1>Animal Info</h1>
        <p>{props.animal.name}</p>
        <p>{props.animal.size}</p>
+       <StyledButton>Back with owner? Click here!</StyledButton>
     </div>
   )
 }
