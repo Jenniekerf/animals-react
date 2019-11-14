@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addAnimal } from '../redux/actions/animals';
+import { updateAnimal } from '../redux/actions/animals';
 
-class NewAnimal extends Component {
+class EditAnimal extends Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+        name: props.animal.name,
+        animal_type: props.animal.animal_type,
+        color: props.animal.color,
+        size: props.animal.size,
+        description: props.animal.description
+    };
+  }
 
-  state = {
-    name: "",
-    animal_type: "",
-    color: "",
-    size: "",
-    description: ""
-  };
+  componentDidUpdate(prevProps) {
+    if (prevProps.animal.name !== this.props.animal.name) {
+      this.setState({
+        name: this.props.animal.name,
+        animal_type: this.props.animal.animal_type,
+        color: this.props.animal.color,
+        size: this.props.animal.size,
+        description: this.props.animal.description
+      })
+    }
+  }
 
 handleChange = event => {
   this.setState({
@@ -18,16 +32,16 @@ handleChange = event => {
   });
 };
 
-submit = event => {
+update = event => {
   event.preventDefault();
 
-  this.props.addAnimal(this.state);
+  this.props.updateAnimal(this.state, this.props.animal.id, this.props);
 };
 
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.update}>
+        <form onSubmit={this.submit}>
         <div className="form-group">
         <label>Name:</label>
         <input
@@ -74,17 +88,26 @@ submit = event => {
           name="description"
           value={this.state.description} />
         </div>
-        <button type="submit" className="btn btn-primary">Add Animal</button>
+        <button type="submit" className="btn btn-primary">Edit Info</button>
         </form>
       </div>
     );
   }
 }
 
+const mapStateToProps = (state, props) => {
+  const id = props.match.params.id;
+  const animal = state.filter(animal => animal.id == id)[0] || {}
+  return {
+    animal
+  };
+};
+
+
 
 export default connect(
-  null,
+  mapStateToProps,
    {
-     addAnimal
+     updateAnimal
    }
-)(NewAnimal);
+)(EditAnimal);

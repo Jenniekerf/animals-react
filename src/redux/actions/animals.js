@@ -46,3 +46,9 @@ export const deleteAnimal = (id, history) => {
     });
   };
 };
+
+export const updateAnimal = () => {
+  return {
+    type: ''
+  }
+}

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const StyledNav = styled.nav`
     li {
       list-style: none
+      margin-right: 70px;
     }
 
     ul {
@@ -15,12 +16,14 @@ const StyledNav = styled.nav`
 
 const Navbar = () => (
   <StyledNav>
-  <nav>
-    <ul>
+  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div  class="container">
+    <ul  class="navbar-nav">
       <li><Link to="/">Home</Link></li>
       <li><Link to="/animals">All animals</Link></li>
       <li><Link to="/animals/new">New Animal</Link></li>
     </ul>
+  </div>
   </nav>
   </StyledNav>
 );
