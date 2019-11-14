@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { deleteAnimal } from '../redux/actions/animals'
+import { Link } from 'react-router-dom';
 
 const StyledButton = styled.button`
-    background-color: purple
-
+    background-color: LightSteelBlue
 `;
 
-function AnimalShow(props) {
-  if (!props.animal) {
-    return <p>Loading...</p>
+class AnimalShow extends Component {
+  delete = () => {
+    this.props.deleteAnimal(this.props.animal.id, this.props.history);
+  };
+  render() {
+    const { animal, loading } = this.props;
+    if (loading && !animal) {
+      return <p>Loading...</p>
+    }
+
+    if (!loading && !animal) {
+      return <p>Animal not found</p>
+    }
+    return (
+      <div>
+         <h1>Animal Info</h1>
+
+         <p>{animal.name}</p>
+         <p>{animal.size}</p>
+
+         <StyledButton onClick={this.delete}>Back with owner? Click here!</StyledButton>
+      </div>
+    )
   }
-  return (
-    <div>
-       <h1>Animal Info</h1>
-       <p>{props.animal.name}</p>
-       <p>{props.animal.size}</p>
-       <StyledButton>Back with owner? Click here!</StyledButton>
-    </div>
-  )
 }
 
 const mapStateToProps = (state, props) => {
@@ -29,4 +42,6 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(AnimalShow)
+export default connect(mapStateToProps,
+  { deleteAnimal }
+)(AnimalShow);

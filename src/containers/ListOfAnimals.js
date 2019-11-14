@@ -21,7 +21,7 @@ class ListOfAnimals extends Component {
 
 const mapStateToProps = (state) => {
 return {
-  animals: state
+  animals: state 
   };
 };
 
