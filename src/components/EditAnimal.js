@@ -6,11 +6,11 @@ class EditAnimal extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        name: props.animal.name,
-        animal_type: props.animal.animal_type,
-        color: props.animal.color,
-        size: props.animal.size,
-        description: props.animal.description
+        name: "",
+        animal_type: "",
+        color: "",
+        size: "",
+        description: ""
     };
   }
 
@@ -22,7 +22,7 @@ class EditAnimal extends Component {
         color: this.props.animal.color,
         size: this.props.animal.size,
         description: this.props.animal.description
-      })
+      });
     }
   }
 
@@ -35,13 +35,13 @@ handleChange = event => {
 update = event => {
   event.preventDefault();
 
-  this.props.updateAnimal(this.state, this.props.animal.id, this.props);
+  this.props.updateAnimal(this.state, this.props.animal.id, this.props.history);
 };
 
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.submit}>
+        <form onSubmit={this.update}>
         <div className="form-group">
         <label>Name:</label>
         <input
@@ -49,7 +49,7 @@ update = event => {
           type="text"
           className="form-control"
           name="name"
-          value={this.state.name} />
+          value={this.state.name || ""} />
         </div>
         <div className="form-group">
         <label>Type of Animal:</label>
@@ -58,7 +58,7 @@ update = event => {
           type="text"
           className="form-control"
           name="animal_type"
-          value={this.state.animal_type} />
+          value={this.state.animal_type || ""} />
         </div>
         <div className="form-group">
         <label>Color:</label>
@@ -67,7 +67,7 @@ update = event => {
           type="text"
           className="form-control"
           name="color"
-          value={this.state.color} />
+          value={this.state.color || ""} />
         </div>
         <div className="form-group">
         <label>Size:</label>
@@ -76,7 +76,7 @@ update = event => {
           type="text"
           className="form-control"
           name="size"
-          value={this.state.size} />
+          value={this.state.size || ""} />
         </div>
         <div className="form-group">
         <label>Description:</label>
@@ -86,7 +86,7 @@ update = event => {
           id="inputlg"
           className="form-control input-lg"
           name="description"
-          value={this.state.description} />
+          value={this.state.description || ""} />
         </div>
         <button type="submit" className="btn btn-primary">Edit Info</button>
         </form>
@@ -97,12 +97,12 @@ update = event => {
 
 const mapStateToProps = (state, props) => {
   const id = props.match.params.id;
-  const animal = state.filter(animal => animal.id == id)[0] || {}
+  const animal = state.filter(animal => animal.id == id)[0] || {};
+
   return {
     animal
   };
 };
-
 
 
 export default connect(

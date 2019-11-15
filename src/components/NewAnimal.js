@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addAnimal } from '../redux/actions/animals';
 
+
 class NewAnimal extends Component {
 
   state = {
@@ -21,13 +22,14 @@ handleChange = event => {
 submit = event => {
   event.preventDefault();
 
-  this.props.addAnimal(this.state);
+  this.props.addAnimal(this.state, this.props.history);
 };
+
 
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.update}>
+        <form onSubmit={this.submit}>
         <div className="form-group">
         <label>Name:</label>
         <input

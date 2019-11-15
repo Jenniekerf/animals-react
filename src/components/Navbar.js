@@ -17,8 +17,8 @@ const StyledNav = styled.nav`
 const Navbar = () => (
   <StyledNav>
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <div  class="container">
-    <ul  class="navbar-nav">
+    <div  className="container">
+    <ul  className="navbar-nav">
       <li><Link to="/">Home</Link></li>
       <li><Link to="/animals">All animals</Link></li>
       <li><Link to="/animals/new">New Animal</Link></li>

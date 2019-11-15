@@ -12,7 +12,7 @@ export const getAnimals = () => {
   };
 };
 
- export const addAnimal = aObj => {
+ export const addAnimal = (aObj, history) => {
    const animalToAdd = { animal: aObj };
    return dispatch => {
      fetch(`http://localhost:3001/animals`, {
@@ -25,13 +25,15 @@ export const getAnimals = () => {
      })
 
   .then(res => res.json())
-  .then(animal =>
+  .then(animal => {
      dispatch({
        type: 'ANIMAL_ADDED',
        payload: animal
-   })
- );
-};
+     })
+
+     history.push("/animals")
+  });
+ };
 };
 
 export const deleteAnimal = (id, history) => {
@@ -41,14 +43,33 @@ export const deleteAnimal = (id, history) => {
     })
     .then(res => res.json())
     .then(id => {
-      dispatch({ type: 'DELETED_ANIMAL', payload: id });
+      dispatch({
+        type: 'DELETED_ANIMAL',
+        payload: id })
       history.push("/animals");
     });
   };
 };
 
-export const updateAnimal = () => {
-  return {
-    type: ''
-  }
-}
+
+export const updateAnimal = (aObj, id, history) => {
+  const animalToUpdate = { animal: aObj };
+
+  return dispatch => {
+    return fetch(`http://localhost:3001/animals/${id}`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(animalToUpdate)
+    })
+    .then(res => res.json())
+    .then(updatedAnimal => {
+      dispatch({
+        type: "UPDATED_ANIMAL",
+        payload: updatedAnimal})
+        history.push(`/animals/${updatedAnimal.id}`);
+    });
+  };
+};

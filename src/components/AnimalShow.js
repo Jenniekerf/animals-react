@@ -15,7 +15,7 @@ class AnimalShow extends Component {
   render() {
     const { animal, loading } = this.props;
 
-    if (loading && animal) {
+    if (loading && !animal) {
       return <p>Loading...</p>
     }
 
@@ -28,9 +28,12 @@ class AnimalShow extends Component {
 
          <p>{animal.name}</p>
          <p>{animal.size}</p>
+         <Link to={`/animals/${animal.id}/edit`}>Edit Info</Link>
+         <br></br>
+         <StyledButton onClick={this.delete}>Reunited with owner? <br/> Click here to remove from list!</StyledButton>
 
-         <StyledButton onClick={this.delete}>Back with owner? Click here!</StyledButton>
-      </div>
+
+    </div>
     )
   }
 }
@@ -39,7 +42,8 @@ const mapStateToProps = (state, props) => {
     const id = props.match.params.id;
     const animal = state.filter(animal => animal.id == id)[0];
     return {
-      animal
+      animal,
+      loading: state.loading
   };
 };
 
