@@ -8,8 +8,8 @@ class NewAnimal extends Component {
   state = {
     name: "",
     animal_type: "",
-    color: "",
-    size: "",
+    area: "",
+    status: "",
     description: ""
   };
 
@@ -49,22 +49,22 @@ submit = event => {
           value={this.state.animal_type} />
         </div>
         <div className="form-group">
-        <label>Color:</label>
+        <label>Area lost/found:</label>
         <input
           onChange={this.handleChange}
           type="text"
           className="form-control"
-          name="color"
-          value={this.state.color} />
+          name="area"
+          value={this.state.area} />
         </div>
         <div className="form-group">
-        <label>Size:</label>
+        <label>Did you lose your pet or found one?:</label>
         <input
           onChange={this.handleChange}
           type="text"
           className="form-control"
-          name="size"
-          value={this.state.size} />
+          name="status"
+          value={this.state.status} />
         </div>
         <div className="form-group">
         <label>Description:</label>

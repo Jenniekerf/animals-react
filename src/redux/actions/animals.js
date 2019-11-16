@@ -8,8 +8,7 @@ export const getAnimals = () => {
       payload: animals
     })
   );
-
-  };
+ };
 };
 
  export const addAnimal = (aObj, history) => {

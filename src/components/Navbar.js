@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const StyledNav = styled.nav`
     li {
       list-style: none
-      margin-right: 70px;
+      margin-right: 90px;
     }
 
     ul {

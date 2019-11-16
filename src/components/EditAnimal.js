@@ -8,8 +8,8 @@ class EditAnimal extends Component {
       this.state = {
         name: "",
         animal_type: "",
-        color: "",
-        size: "",
+        area: "",
+        status: "",
         description: ""
     };
   }
@@ -19,8 +19,8 @@ class EditAnimal extends Component {
       this.setState({
         name: this.props.animal.name,
         animal_type: this.props.animal.animal_type,
-        color: this.props.animal.color,
-        size: this.props.animal.size,
+        color: this.props.animal.area,
+        size: this.props.animal.status,
         description: this.props.animal.description
       });
     }
@@ -66,8 +66,8 @@ update = event => {
           onChange={this.handleChange}
           type="text"
           className="form-control"
-          name="color"
-          value={this.state.color || ""} />
+          name="area"
+          value={this.state.area || ""} />
         </div>
         <div className="form-group">
         <label>Size:</label>
@@ -75,8 +75,8 @@ update = event => {
           onChange={this.handleChange}
           type="text"
           className="form-control"
-          name="size"
-          value={this.state.size || ""} />
+          name="status"
+          value={this.state.status || ""} />
         </div>
         <div className="form-group">
         <label>Description:</label>

@@ -16,7 +16,7 @@ class AnimalShow extends Component {
     const { animal, loading } = this.props;
 
     if (loading && !animal) {
-      return <p>Loading...</p>
+      return <p>There are no animals to show</p>
     }
 
     if (!loading && !animal) {
@@ -27,7 +27,10 @@ class AnimalShow extends Component {
          <h1>Animal Info</h1>
 
          <p>{animal.name}</p>
-         <p>{animal.size}</p>
+         <p>{animal.animal_type}</p>
+         <p>{animal.area}</p>
+         <p>{animal.status}</p>
+         <p>{animal.description}</p>
          <Link to={`/animals/${animal.id}/edit`}>Edit Info</Link>
          <br></br>
          <StyledButton onClick={this.delete}>Reunited with owner? <br/> Click here to remove from list!</StyledButton>
