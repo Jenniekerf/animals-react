@@ -19,8 +19,8 @@ class EditAnimal extends Component {
       this.setState({
         name: this.props.animal.name,
         animal_type: this.props.animal.animal_type,
-        color: this.props.animal.area,
-        size: this.props.animal.status,
+        area: this.props.animal.area,
+        status: this.props.animal.status,
         description: this.props.animal.description
       });
     }
