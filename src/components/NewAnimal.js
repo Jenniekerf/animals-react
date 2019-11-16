@@ -6,7 +6,7 @@ import { addAnimal } from '../redux/actions/animals';
 class NewAnimal extends Component {
 
   state = {
-    name: "",
+    name: "Unknown",
     animal_type: "",
     area: "",
     status: "",
@@ -50,25 +50,51 @@ submit = event => {
         </div>
         <div className="form-group">
         <label>Area lost/found:</label>
-        <input
+        <select
           onChange={this.handleChange}
           type="text"
           className="form-control"
           name="area"
-          value={this.state.area} />
+          value={this.state.area}>
+            <option value=""></option>
+            <option value="Dumbo">Dumbo</option>
+            <option value="Williamsburg">Williamsburg</option>
+            <option value="Park Slope">Park Slope</option>
+            <option value="Brooklyn Heights">Brooklyn Heights</option>
+            <option value="Bushwick">Bushwick</option>
+            <option value="Bedstuy">Bedstuy</option>
+            <option value="Crown Heights">Crown Heights</option>
+            <option value="Fort Greene">Fort Greene</option>
+            <option value="Flatbush">Flatbush</option>
+            <option value="Prospect Heights">Prospect Heights</option>
+            <option value="Greenpoint">Greenpoint</option>
+            <option value="Carroll Gardens">Carroll Gardens</option>
+            <option value="Cobble Hill">Cobble Hill</option>
+            <option value="Red Hook">Red Hook</option>
+            <option value="Downtown Brooklyn">Downtown Brooklyn</option>
+            <option value="Sunset Park">Sunset Park</option>
+            <option value="Bay Ridge">Bay Ridge</option>
+            <option value="Clinton Hill">Clinton Hill</option>
+            <option value="Boerum Hill">Boerum Hill</option>
+            <option value="Gowanus">Gowanus</option>
+          </select>
         </div>
         <div className="form-group">
         <label>Did you lose your pet or found one?:</label>
-        <input
+        <select
           onChange={this.handleChange}
           type="text"
           className="form-control"
           name="status"
-          value={this.state.status} />
+          value={this.state.value}>
+          <option value=""></option>
+          <option value="Lost">Lost</option>
+          <option value="Found">Found</option>
+          </select>
         </div>
         <div className="form-group">
         <label>Description:</label>
-        <input
+        <textarea
           onChange={this.handleChange}
           type="text"
           id="inputlg"
