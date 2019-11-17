@@ -80,13 +80,13 @@ submit = event => {
           </select>
         </div>
         <div className="form-group">
-        <label>Did you lose your pet or found one?:</label>
+        <label>Did you lose your pet or found a lost one?</label>
         <select
           onChange={this.handleChange}
           type="text"
           className="form-control"
           name="status"
-          value={this.state.value}>
+          value={this.state.status}>
           <option value=""></option>
           <option value="Lost">Lost</option>
           <option value="Found">Found</option>

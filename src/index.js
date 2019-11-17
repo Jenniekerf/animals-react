@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './redux';
 import { Provider } from 'react-redux'
+import { thunk } from 'redux-thunk';
 
 ReactDOM.render(
   <Provider store={store}>

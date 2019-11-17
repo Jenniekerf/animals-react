@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom'
 class ListOfAnimals extends Component {
   render() {
     if (this.props.animals.length === 0) {
-      return <p>Loading..</p>;
+      return <p>There are no animals added</p>;
     }
+
     return (
       <div>
-        <h1>List Of Animals</h1>
+        <h1>List of Animals</h1>
         {this.props.animals.map(animal => (
             <p key={animal.id}>
               <Link to={`/animals/${animal.id}`}>{animal.name}</Link></p>

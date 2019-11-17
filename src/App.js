@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import { getAnimals } from './redux/actions/animals';
 
 
+
 class App extends React.Component {
   componentDidMount() {
     this.props.getAnimals();

@@ -16,7 +16,7 @@ class AnimalShow extends Component {
     const { animal, loading } = this.props;
 
     if (loading && !animal) {
-      return <p>There are no animals to show</p>
+      return <p>Loading...</p>
     }
 
     if (!loading && !animal) {
