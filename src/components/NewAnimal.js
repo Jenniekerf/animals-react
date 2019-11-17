@@ -88,8 +88,8 @@ submit = event => {
           name="status"
           value={this.state.status}>
           <option value=""></option>
-          <option value="Lost">Lost</option>
-          <option value="Found">Found</option>
+          <option value="lost">Lost</option>
+          <option value="found">Found</option>
           </select>
         </div>
         <div className="form-group">

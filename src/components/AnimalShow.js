@@ -29,7 +29,6 @@ class AnimalShow extends Component {
          <p>{animal.name}</p>
          <p>{animal.animal_type}</p>
          <p>{animal.area}</p>
-         <p>{animal.status}</p>
          <p>{animal.description}</p>
          <Link to={`/animals/${animal.id}/edit`}>Edit Info</Link>
          <br></br>

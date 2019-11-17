@@ -20,7 +20,8 @@ const Navbar = () => (
     <div  className="container">
     <ul  className="navbar-nav">
       <li><Link to="/">Home</Link></li>
-      <li><Link to="/animals">All animals</Link></li>
+      <li><Link to="/animals/lost">Lost Animals</Link></li>
+      <li><Link to="/animals/found">Found Animals</Link></li>
       <li><Link to="/animals/new">New Animal</Link></li>
     </ul>
   </div>
