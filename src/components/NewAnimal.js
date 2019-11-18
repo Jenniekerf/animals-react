@@ -6,7 +6,7 @@ import { addAnimal } from '../redux/actions/animals';
 class NewAnimal extends Component {
 
   state = {
-    name: "Unknown",
+    name: "",
     animal_type: "",
     area: "",
     status: "",
@@ -39,6 +39,7 @@ submit = event => {
           name="name"
           value={this.state.name} />
         </div>
+
         <div className="form-group">
         <label>Type of Animal:</label>
         <input
@@ -102,7 +103,20 @@ submit = event => {
           name="description"
           value={this.state.description} />
         </div>
+        <div className="custom-file">
+          <label className="custom-file-label">Upload image</label>
+          <input
+          onChange={this.handleChange}
+          type="file"
+          className="custom-file-input"
+          name="img"
+          value={this.state.name} />
+      </div>
+      <br></br>
+      <br></br>
+      <div>
         <button type="submit" className="btn btn-primary">Add Animal</button>
+        </div>
         </form>
       </div>
     );

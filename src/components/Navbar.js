@@ -22,14 +22,12 @@ const Navbar = () => (
       <li><Link to="/">Home</Link></li>
       <li><Link to="/animals/lost">Lost Animals</Link></li>
       <li><Link to="/animals/found">Found Animals</Link></li>
-      <li><Link to="/animals/new">New Animal</Link></li>
+      <li><Link to="/animals/new">Add New Animal</Link></li>
     </ul>
   </div>
   </nav>
   </StyledNav>
 );
-
-
 
 
 export default Navbar;
