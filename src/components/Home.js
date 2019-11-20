@@ -3,10 +3,18 @@ import '../App.css';
 import styled from 'styled-components';
 
 const Home = () => <div
-class="header .main h3">
+className="home-wrapper">
+
+
 <br></br>
-<h1 className="title-container__title">Paws On The Loose BK</h1>
-<h3 className="title-container__subtitle">Hopefully this page will reunite you with your furry friend!</h3>
+<div className="container">
+  <br></br>
+  <h1 className="title-hp">Paws On The Loose BK</h1>
+<br></br>
+<div className="title-container__subtitle">
+  <h3>Let us help you get reunited you with your furry friend!</h3>
+  </div>
+</div>
 </div>
 
 
