@@ -1,10 +1,17 @@
 import React from 'react'
+import '../App.css';
+import styled from 'styled-components';
 
-const Home = () => <div class="header .main h3">
-<h1>Paws On The Loose BK</h1><
-  /div>
+const Home = () => <div
+class="header .main h3">
+<br></br>
+<h1 className="title-container__title">Paws On The Loose BK</h1>
+<h3 className="title-container__subtitle">Hopefully this page will reunite you with your furry friend!</h3>
+</div>
 
-let imgUrl = 'https://www.freepik.com/premium-photo/two-beautiful-puppies_2928264.htm#page=5&query=pets+background&position=29';
+
+
+
 
 
 export default Home;

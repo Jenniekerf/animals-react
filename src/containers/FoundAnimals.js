@@ -17,9 +17,6 @@ class FoundAnimals extends Component {
           <p key={animal.id}>
             <Link to={`/animals/${animal.id}`}>{animal.name}</Link></p>
         ))}
-
-
-
       </div>
     );
   }

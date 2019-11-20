@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addAnimal } from '../redux/actions/animals';
+import ImageUploader from 'react-images-upload';
 
 
 class NewAnimal extends Component {
@@ -10,17 +11,24 @@ class NewAnimal extends Component {
     animal_type: "",
     area: "",
     status: "",
-    description: ""
+    description: "",
+    pictures: []
   };
 
-handleChange = event => {
+handleChange = e => {
   this.setState({
-    [event.target.name]: event.target.value
+    [e.target.name]: e.target.value
   });
 };
 
-submit = event => {
-  event.preventDefault();
+onDrop(picture) {
+  this.setState({
+    pictures: this.state.pictures.concat(picture)
+  });
+}
+
+submit = e => {
+  e.preventDefault();
 
   this.props.addAnimal(this.state, this.props.history);
 };
@@ -28,33 +36,40 @@ submit = event => {
 
   render() {
     return (
+      <div>
+        <div className="wrapper">
+          <div className="main">
       <div className="container">
-        <form onSubmit={this.submit}>
-        <div className="form-group">
+        <div className="row">
+
+        <div className="col-xs-5 title-container">
+          <h1>Add new animal</h1>
+          </div>
+
+          <div>
+           <form className="col-xs-7 form-container" onSubmit={this.submit}>
+          <br></br>
+
         <label>Name:</label>
         <input
           onChange={this.handleChange}
           type="text"
-          className="form-control"
           name="name"
           value={this.state.name} />
-        </div>
 
-        <div className="form-group">
         <label>Type of Animal:</label>
         <input
           onChange={this.handleChange}
           type="text"
-          className="form-control"
           name="animal_type"
           value={this.state.animal_type} />
-        </div>
-        <div className="form-group">
+        <br></br>
+
         <label>Area lost/found:</label>
         <select
           onChange={this.handleChange}
           type="text"
-          className="form-control"
+
           name="area"
           value={this.state.area}>
             <option value=""></option>
@@ -79,21 +94,21 @@ submit = event => {
             <option value="Boerum Hill">Boerum Hill</option>
             <option value="Gowanus">Gowanus</option>
           </select>
-        </div>
-        <div className="form-group">
+
+
         <label>Did you lose your pet or found a lost one?</label>
         <select
           onChange={this.handleChange}
           type="text"
-          className="form-control"
+
           name="status"
           value={this.state.status}>
           <option value=""></option>
           <option value="lost">Lost</option>
           <option value="found">Found</option>
           </select>
-        </div>
-        <div className="form-group">
+
+<br></br>
         <label>Description:</label>
         <textarea
           onChange={this.handleChange}
@@ -102,23 +117,29 @@ submit = event => {
           className="form-control input-lg"
           name="description"
           value={this.state.description} />
+
+        <ImageUploader
+          withIcon={true}
+          buttonText='Choose a photo'
+          onChange={this.onDrop}
+          imgExtension={['.jpg', '.gif', '.png', '.gif']}
+          maxFileSize={5242880}
+            />
+          <br></br>
+          <br></br>
+        <div>
+          <button type="submit" className="btn btn-primary">Add Animal</button>
         </div>
-        <div className="custom-file">
-          <label className="custom-file-label">Upload image</label>
-          <input
-          onChange={this.handleChange}
-          type="file"
-          className="custom-file-input"
-          name="img"
-          value={this.state.name} />
-      </div>
-      <br></br>
-      <br></br>
-      <div>
-        <button type="submit" className="btn btn-primary">Add Animal</button>
-        </div>
+
         </form>
       </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+
     );
   }
 }
