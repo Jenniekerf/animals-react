@@ -12,7 +12,7 @@ class NewAnimal extends Component {
     area: "",
     status: "",
     description: "",
-    pictures: []
+    img: ""
   };
 
 handleChange = e => {
@@ -21,10 +21,14 @@ handleChange = e => {
   });
 };
 
-onDrop(picture) {
+imgHandler = e => {
   this.setState({
-    pictures: this.state.pictures.concat(picture)
-  });
+    img: e.target.files[0]
+  })
+}
+
+imgUpload = () => {
+
 }
 
 submit = e => {
@@ -105,6 +109,7 @@ submit = e => {
           <option value="found">Found</option>
           </select>
 
+
 <br></br>
         <label className="label2">Description:</label>
         <textarea
@@ -113,28 +118,26 @@ submit = e => {
           className="form-control input-lg"
           name="description"
           value={this.state.description} />
-
-        <ImageUploader
-          withIcon={true}
-          buttonText='Choose a photo'
-          onChange={this.onDrop}
-          imgExtension={['.jpg', '.gif', '.png', '.gif']}
-          maxFileSize={5242880}
-            />
+        <br></br>
+        <input
+          type="file"
+          onChange={this.imgHandler}
+          name="file" />
+          <button onClick={this.imgUpload}>Upload Photo</button>
           <br></br>
           <br></br>
         <div>
           <button type="submit">Add Animal</button>
         </div>
 
-        </form>
-      </div>
-      </div>
-        
-      </div>
-      </div>
-      </div>
-      </div>
+           </form>
+
+              </div>
+             </div>
+            </div>
+          </div>
+        </div>
+     </div>
 
 
     );

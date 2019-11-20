@@ -31,12 +31,12 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/animals/lost" component={LostAnimals} />
-          <Route exact path="/animals/found" component={FoundAnimals} />
+          <Route path="/animals/lost" component={LostAnimals} />
+          <Route path="/animals/found" component={FoundAnimals} />
           <Route path="/animals/new" component={NewAnimal} />
           <Route path="/animals/:id/edit" component={EditAnimal} />
           <Route path="/animals/:id" component={AnimalShow} />
-
+        
         </Switch>
     </Router>
 

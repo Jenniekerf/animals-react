@@ -5,7 +5,7 @@ import { deleteAnimal } from '../redux/actions/animals'
 import { Link } from 'react-router-dom';
 
 const StyledButton = styled.button`
-    background-color: LightSteelBlue
+    background-color: Blue
 `;
 
 class AnimalShow extends Component {
@@ -23,18 +23,29 @@ class AnimalShow extends Component {
       return <p>Animal not found</p>
     }
     return (
-      <div>
-         <h1>Animal Info</h1>
+      <div className="show-wrapper">
+      <div className="animal-info">
+        <br></br>
+         <h1 className="title-hp">Animal Info</h1>
 
-         <p>{animal.name}</p>
-         <p>{animal.animal_type}</p>
-         <p>{animal.area}</p>
-         <p>{animal.description}</p>
+         <p className="animal-key">Name:
+           <span className="animal-value">{animal.name}</span>
+         </p>
+         <p className="animal-key">Type:
+           <span className="animal-value">{animal.animal_type}</span>
+         </p>
+         <p className="animal-key">Area:
+           <span className="animal-value"> {animal.area}</span>
+         </p>
+         <p className="animal-key">Description:
+           <span className="animal-value">{animal.description}</span>
+         </p>
          <Link to={`/animals/${animal.id}/edit`}>Edit Info</Link>
+         <br></br>
          <br></br>
          <StyledButton onClick={this.delete}>Reunited with owner? <br/> Click here to remove from list!</StyledButton>
 
-
+</div>
     </div>
     )
   }

@@ -9,8 +9,8 @@ class LostAnimals extends Component {
     }
 
     return (
-      <div>
-        <h1>Lost Animals</h1>
+      <div className="lostandfound-wrapper">
+        <h1 className="container__title">Lost Animals</h1>
         {this.props.animals.filter(function (animal) {
           return animal.status === 'lost'
         }).map(animal => (
