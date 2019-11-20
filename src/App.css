@@ -100,6 +100,10 @@ button:active {
   outline: none;
 }
 
+.label {
+  color: white;
+}
+
 .weather__info {
   width: 60%;
   font-size: 20px;

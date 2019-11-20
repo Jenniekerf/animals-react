@@ -41,23 +41,24 @@ submit = e => {
           <div className="main">
       <div className="container">
         <div className="row">
+          <div className="col-xs-5 title-container">
+            <h1>Add new animal</h1>
+            </div>
 
-        <div className="col-xs-5 title-container">
-          <h1>Add new animal</h1>
-          </div>
 
-          <div>
+            <div>
            <form className="col-xs-7 form-container" onSubmit={this.submit}>
           <br></br>
 
-        <label>Name:</label>
+
+        <label className="label">Name:</label>
         <input
           onChange={this.handleChange}
           type="text"
           name="name"
           value={this.state.name} />
 
-        <label>Type of Animal:</label>
+        <label className="label">Type of Animal:</label>
         <input
           onChange={this.handleChange}
           type="text"
@@ -65,7 +66,7 @@ submit = e => {
           value={this.state.animal_type} />
         <br></br>
 
-        <label>Area lost/found:</label>
+        <label className="label">Area lost/found:</label>
         <select
           onChange={this.handleChange}
           type="text"
@@ -95,8 +96,9 @@ submit = e => {
             <option value="Gowanus">Gowanus</option>
           </select>
 
-
-        <label>Did you lose your pet or found a lost one?</label>
+<br></br>
+        <label className="label">Lost or found? </label>
+        <br/>
         <select
           onChange={this.handleChange}
           type="text"
@@ -109,7 +111,7 @@ submit = e => {
           </select>
 
 <br></br>
-        <label>Description:</label>
+        <label className="label">Description:</label>
         <textarea
           onChange={this.handleChange}
           type="text"
@@ -128,7 +130,7 @@ submit = e => {
           <br></br>
           <br></br>
         <div>
-          <button type="submit" className="btn btn-primary">Add Animal</button>
+          <button type="submit">Add Animal</button>
         </div>
 
         </form>
