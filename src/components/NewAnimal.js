@@ -37,40 +37,37 @@ submit = e => {
   render() {
     return (
       <div>
-        <div className="wrapper">
+        <div className="wrapper" id="full-size">
           <div className="main">
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-5 title-container">
-            <h1>Add new animal</h1>
-            </div>
+           <div className="container">
+             <div className="row">
+               <div className="col-xs-5 title-container">
+                 <h1><strong>Add new animal here</strong></h1>
+               </div>
 
 
-            <div>
-           <form className="col-xs-7 form-container" onSubmit={this.submit}>
-          <br></br>
+            <div className="col-xs-7 form-container">
+           <form onSubmit={this.submit}>
 
-
-        <label className="label">Name:</label>
+         <label className="label2">Name:</label>
         <input
           onChange={this.handleChange}
           type="text"
           name="name"
           value={this.state.name} />
 
-        <label className="label">Type of Animal:</label>
+        <label className="label2">Type of Animal:</label>
         <input
           onChange={this.handleChange}
           type="text"
           name="animal_type"
           value={this.state.animal_type} />
-        <br></br>
+        <br/>
 
-        <label className="label">Area lost/found:</label>
+        <label className="label1">Area lost/found:</label>
         <select
           onChange={this.handleChange}
           type="text"
-
           name="area"
           value={this.state.area}>
             <option value=""></option>
@@ -95,10 +92,8 @@ submit = e => {
             <option value="Boerum Hill">Boerum Hill</option>
             <option value="Gowanus">Gowanus</option>
           </select>
-
-<br></br>
-        <label className="label">Lost or found? </label>
         <br/>
+        <label className="label2">Lost or found?</label>
         <select
           onChange={this.handleChange}
           type="text"
@@ -111,11 +106,10 @@ submit = e => {
           </select>
 
 <br></br>
-        <label className="label">Description:</label>
+        <label className="label2">Description:</label>
         <textarea
           onChange={this.handleChange}
           type="text"
-          id="inputlg"
           className="form-control input-lg"
           name="description"
           value={this.state.description} />
