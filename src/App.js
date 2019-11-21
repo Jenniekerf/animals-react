@@ -9,6 +9,7 @@ import NewAnimal from './components/NewAnimal';
 import AnimalShow from './components/AnimalShow';
 import EditAnimal from './components/EditAnimal'
 import Navbar from './components/Navbar';
+import ListOfAnimals from './containers/ListOfAnimals';
 import LostAnimals from './containers/LostAnimals';
 import FoundAnimals from './containers/FoundAnimals';
 import { connect } from 'react-redux';
@@ -31,12 +32,13 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/animals" component={ListOfAnimals} />
           <Route path="/animals/lost" component={LostAnimals} />
           <Route path="/animals/found" component={FoundAnimals} />
           <Route path="/animals/new" component={NewAnimal} />
           <Route path="/animals/:id/edit" component={EditAnimal} />
           <Route path="/animals/:id" component={AnimalShow} />
-        
+
         </Switch>
     </Router>
 

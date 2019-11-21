@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 class LostAnimals extends Component {
   render() {
     if (this.props.animals.length === 0) {
-      return <p>There are no animals added</p>;
+      return <p className="lostandfound-wrapper">There are currently no animals added</p>;
     }
 
     return (

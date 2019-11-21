@@ -46,7 +46,7 @@ render() {
          <div className="container">
            <div className="row">
              <div className="col-xs-5 title-container">
-               <h1><strong>Add new animal here</strong></h1>
+               <h1><strong>Edit info here</strong></h1>
              </div>
                 <div className="col-xs-7 form-container">
 
@@ -122,7 +122,7 @@ render() {
                          <br></br>
                          <br></br>
                        <div>
-                         <button type="submit">Add Animal</button>
+                         <button type="submit">Update Info</button>
                        </div>
 
                           </form>
