@@ -6,11 +6,11 @@ class EditAnimal extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        name: "",
-        animal_type: "",
-        area: "",
-        status: "",
-        description: ""
+        name: props.animal.name,
+        animal_type: props.animal.animal_type,
+        area: props.animal.area,
+        status: props.animal.status,
+        description: props.animal.description
     };
   }
 

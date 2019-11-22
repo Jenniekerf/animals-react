@@ -4,10 +4,6 @@ import styled from 'styled-components';
 import { deleteAnimal } from '../redux/actions/animals'
 import { Link } from 'react-router-dom';
 
-const StyledButton = styled.button`
-    background-color: Blue
-`;
-
 class AnimalShow extends Component {
   delete = () => {
     this.props.deleteAnimal(this.props.animal.id, this.props.history);
@@ -29,21 +25,21 @@ class AnimalShow extends Component {
          <h1 className="title-hp">Animal Info</h1>
 
          <p className="animal-key">Name:
-           <span className="animal-value">{animal.name}</span>
+           <span className="animal-value"> {animal.name}</span>
          </p>
          <p className="animal-key">Type:
-           <span className="animal-value">{animal.animal_type}</span>
+           <span className="animal-value"> {animal.animal_type}</span>
          </p>
          <p className="animal-key">Area:
            <span className="animal-value"> {animal.area}</span>
          </p>
          <p className="animal-key">Description:
-           <span className="animal-value">{animal.description}</span>
+           <span className="animal-value"> {animal.description}</span>
          </p>
-         <Link to={`/animals/${animal.id}/edit`}>Edit Info</Link>
+         <Link to={`/animals/${animal.id}/edit`}><bold>Edit Info</bold></Link>
          <br></br>
          <br></br>
-         <StyledButton onClick={this.delete}>Reunited with owner? <br/> Click here to remove from list!</StyledButton>
+         <button onClick={this.delete}>Reunited with owner? <br/> Click here to remove from list!</button>
 
 </div>
     </div>

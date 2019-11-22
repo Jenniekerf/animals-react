@@ -53,11 +53,11 @@ body {
 }
 
 .home-container {
-  background: url("img/hp-paws.jpg")
+  background: url("img/hp.jpg")
 }
 
 .home-wrapper {
-  background: url("img/hp-paws.jpg");
+  background: url("img/hp.jpg");
   height: 100vh;
   display: flex;
 }
@@ -65,11 +65,11 @@ body {
 .lostandfound-wrapper {
   background: url("img/paw-prints.jpg");
   height: 100vh;
-  
+
 }
 
 .show-wrapper {
-  background: url("img/mc-paws.jpg");
+  background: url("img/sp.jpg");
   height: 100vh;
   display: flex;
 }
@@ -121,6 +121,11 @@ input[type="text"] {
   margin-bottom: 30px;
   margin-right: 20px;
   font-size: 20px;
+}
+
+a:link {
+  color: #3232a8;
+  font-weight: bold;
 }
 
 input[type="text"] {
@@ -176,23 +181,13 @@ button:active {
   color: red;
   border-bottom: solid 2px rgba(255,255,255,0.06);
   padding: 20px 0 20px 0;
-  font-weight: 400;
+  font-weight: bold;
 }
 
-.weather__key:last-child {
-  border: 0;
-}
 
 .animal-value {
   color: black;
-  font-weight: 200;
-}
-
-.weather__error {
-  color: #f16051;
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-weight: 200;
+  font-weight: bold;
 }
 
 

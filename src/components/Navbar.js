@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
-
 const Navbar = () => (
 
   <nav className="navbar navbar-default navbar-expand-sm navbar-dark bg-dark">

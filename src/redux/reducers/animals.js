@@ -6,7 +6,7 @@ export default (
     case 'FETCH_ANIMALS':
       return action.payload;
 
-    case 'ADD_ANIMAL':
+    case 'ANIMAL_ADDED':
       return [...state, action.payload];
 
     case 'DELETED_ANIMAL':
