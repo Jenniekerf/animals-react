@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+#alert {
+  color: red;
+}
+
 #full-size {
     height:100%;
     width:100%;

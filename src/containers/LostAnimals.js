@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom'
 
 class LostAnimals extends Component {
   render() {
-    if (this.props.animals.length === 0) {
-      return <p className="lostandfound-wrapper">There are currently no animals added</p>;
+    let lostAnimals = this.props.animals.filter(function (animal) {
+      return animal.status === "lost"
+    })
+
+    if (lostAnimals.length === 0) {
+      return <p className="lostandfound-wrapper" id="alert">There are currently no animals added</p>;
     }
 
     return (

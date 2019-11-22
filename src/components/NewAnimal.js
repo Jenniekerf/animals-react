@@ -21,15 +21,15 @@ handleChange = e => {
   });
 };
 
-imgHandler = e => {
-  this.setState({
-    img: e.target.files[0]
-  })
-}
-
-imgUpload = () => {
-
-}
+// imgHandler = e => {
+//   this.setState({
+//     img: e.target.files[0]
+//   })
+// }
+//
+// imgUpload = () => {
+//
+// }
 
 submit = e => {
   e.preventDefault();
@@ -46,7 +46,7 @@ submit = e => {
            <div className="container">
              <div className="row">
                <div className="col-xs-5 title-container">
-                 <h1><strong>Add new animal here</strong></h1>
+                 <h1><strong>Add animal here</strong></h1>
                </div>
 
 
