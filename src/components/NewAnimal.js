@@ -21,16 +21,13 @@ handleChange = e => {
   });
 };
 
-// imgHandler = e => {
-//   this.setState({
-//     img: e.target.files[0]
-//   })
-// }
-//
-// imgUpload = () => {
-//
-// }
+ imgHandler = e => {
+   this.setState({
+     img: e.target.files[0]
+   })
+ }
 
+ 
 submit = e => {
   e.preventDefault();
 

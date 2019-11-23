@@ -6,6 +6,7 @@ const Navbar = () => (
   <nav className="navbar navbar-default navbar-expand-sm navbar-dark bg-dark">
     <div  className="container">
       <div className="navbar-header">
+        
 <div className="navbar-brand">Paws On The Loose BK</div>
       </div>
     <ul  className="nav navbar-nav nav-fill w-100%">
