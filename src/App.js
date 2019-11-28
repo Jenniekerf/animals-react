@@ -9,9 +9,10 @@ import NewAnimal from './components/NewAnimal';
 import AnimalShow from './components/AnimalShow';
 import EditAnimal from './components/EditAnimal'
 import Navbar from './components/Navbar';
-import ListOfAnimals from './containers/ListOfAnimals';
-import LostAnimals from './containers/LostAnimals';
-import FoundAnimals from './containers/FoundAnimals';
+import ListOfAnimals from './components/ListOfAnimals';
+import LostAnimals from './components/LostAnimals';
+import FoundAnimals from './components/FoundAnimals';
+
 import { connect } from 'react-redux';
 import { getAnimals } from './redux/actions/animals';
 
@@ -25,8 +26,7 @@ class App extends React.Component {
 
     return (
 
-
-    <div className="App">
+  <div className="App">
 
     <Router>
         <Navbar />
@@ -38,6 +38,7 @@ class App extends React.Component {
           <Route path="/animals/new" component={NewAnimal} />
           <Route path="/animals/:id/edit" component={EditAnimal} />
           <Route path="/animals/:id" component={AnimalShow} />
+
 
         </Switch>
     </Router>

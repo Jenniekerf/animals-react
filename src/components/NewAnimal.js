@@ -27,7 +27,7 @@ handleChange = e => {
    })
  }
 
- 
+
 submit = e => {
   e.preventDefault();
 
@@ -51,14 +51,14 @@ submit = e => {
            <form onSubmit={this.submit}>
 
          <label className="label2">Name:</label>
-        <input
+       <input className="special-input"
           onChange={this.handleChange}
           type="text"
           name="name"
           value={this.state.name} />
 
         <label className="label2">Type of Animal:</label>
-        <input
+      <input className="special-input"
           onChange={this.handleChange}
           type="text"
           name="animal_type"
@@ -129,7 +129,7 @@ submit = e => {
 
            </form>
 
-              </div>
+               </div>
              </div>
             </div>
           </div>
