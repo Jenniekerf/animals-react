@@ -12,7 +12,6 @@ export const getAnimals = () => {
 };
 
  export const addAnimal = (aObj, history) => {
-   const animalToAdd = { animal: aObj };
    return dispatch => {
      fetch(`http://localhost:3001/animals`, {
        method: 'POST',
@@ -20,7 +19,7 @@ export const getAnimals = () => {
          Accept: 'application/json',
          'Content-Type': 'application/json'
        },
-       body: JSON.stringify(animalToAdd)
+       body: JSON.stringify({animal: aObj})
      })
 
   .then(res => res.json())
@@ -52,8 +51,6 @@ export const deleteAnimal = (id, history) => {
 
 
 export const updateAnimal = (aObj, id, history) => {
-  const animalToUpdate = { animal: aObj };
-
   return dispatch => {
     return fetch(`http://localhost:3001/animals/${id}`, {
       method: "PATCH",
@@ -61,7 +58,7 @@ export const updateAnimal = (aObj, id, history) => {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(animalToUpdate)
+      body: JSON.stringify({animal: aObj})
     })
     .then(res => res.json())
     .then(updatedAnimal => {

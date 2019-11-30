@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateAnimal } from '../redux/actions/animals';
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 class EditAnimal extends Component {
   constructor(props) {
@@ -106,7 +109,7 @@ render() {
                <option value="found">Found</option>
                </select>
                <br></br>
-                     <label className="label2">Description:</label>
+                     <label className="label2">Description and Contact info:</label>
                      <textarea
                        onChange={this.handleChange}
                        type="text"

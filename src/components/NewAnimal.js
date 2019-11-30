@@ -108,7 +108,7 @@ submit = e => {
 
 
 <br></br>
-        <label className="label2">Description:</label>
+        <label className="label2">Description and Contact info:</label>
         <textarea
           onChange={this.handleChange}
           type="text"

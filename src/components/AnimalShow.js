@@ -33,9 +33,10 @@ class AnimalShow extends Component {
          <p className="animal-key">Area:
            <span className="animal-value"> {animal.area}</span>
          </p>
-         <p className="animal-key">Description:
+         <p className="animal-key">Description and Contact info:
            <span className="animal-value"> {animal.description}</span>
          </p>
+
          <Link to={`/animals/${animal.id}/edit`}><bold>Edit Info</bold></Link>
          <br></br>
          <br></br>

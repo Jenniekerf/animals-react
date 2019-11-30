@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 const FoundAnimals = (props) =>  {
+  const foundAnimals = props.animals.filter(function (animal) {
+    return animal.status === 'found'
+  })
+  if (foundAnimals.length === 0) {
+    return <p id="alert">There are currently no animals added</p>
+  }
      return (
         <div className="lostandfound-wrapper">
         <h1 className="container__title">Found Animals</h1>
-        {props.animals.filter(function (animal) {
+        {foundAnimals.filter(function (animal) {
           return animal.status === 'found'
         }).map(animal => (
           <p key={animal.id}>
