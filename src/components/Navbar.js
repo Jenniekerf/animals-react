@@ -10,11 +10,11 @@ const Navbar = () => (
 <div className="navbar-brand">Paws On The Loose BK</div>
       </div>
     <ul  className="nav navbar-nav nav-fill w-100%">
-      <li class="nav-link"><Link to="/">Home</Link></li>
-      <li class="nav-link"><Link to="/animals">All Animals</Link></li>
-      <li class="nav-link"><Link to="/animals/lost">Lost Animals</Link></li>
-      <li class="nav-link"><Link to="/animals/found">Found Animals</Link></li>
-      <li class="nav-link"><Link to="/animals/new">Add New Animal</Link></li>
+      <li className="nav-link"><Link to="/">Home</Link></li>
+      <li className="nav-link"><Link to="/animals">All Animals</Link></li>
+      <li className="nav-link"><Link to="/animals/lost">Lost Animals</Link></li>
+      <li className="nav-link"><Link to="/animals/found">Found Animals</Link></li>
+      <li className="nav-link"><Link to="/animals/new">Add New Animal</Link></li>
     </ul>
 
 </div>

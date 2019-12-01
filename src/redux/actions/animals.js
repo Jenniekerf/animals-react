@@ -34,6 +34,7 @@ export const getAnimals = () => {
  };
 };
 
+
 export const deleteAnimal = (id, history) => {
   return dispatch => {
     fetch(`http://localhost:3001/animals/${id}`, {

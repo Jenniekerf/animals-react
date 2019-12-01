@@ -7,7 +7,7 @@ const FoundAnimals = (props) =>  {
     return animal.status === 'found'
   })
   if (foundAnimals.length === 0) {
-    return <p id="alert">There are currently no animals added</p>
+    return <p id="alert" className="lostandfound-wrapper">There are currently no animals added</p>
   }
      return (
         <div className="lostandfound-wrapper">

@@ -37,7 +37,7 @@ class AnimalShow extends Component {
            <span className="animal-value"> {animal.description}</span>
          </p>
 
-         <Link to={`/animals/${animal.id}/edit`}><bold>Edit Info</bold></Link>
+         <Link to={`/animals/${animal.id}/edit`} id="bold">Edit Info</Link>
          <br></br>
          <br></br>
          <button onClick={this.delete}>Reunited with owner? <br/> Click here to remove from list!</button>

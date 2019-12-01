@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addAnimal } from '../redux/actions/animals';
-import ImageUploader from 'react-images-upload';
-
 
 class NewAnimal extends Component {
 
@@ -12,7 +10,7 @@ class NewAnimal extends Component {
     area: "",
     status: "",
     description: "",
-    img: ""
+    image: ""
   };
 
 handleChange = e => {
@@ -23,10 +21,13 @@ handleChange = e => {
 
  imgHandler = e => {
    this.setState({
-     img: e.target.files[0]
+     image: e.target.files[0]
    })
  }
 
+ imgUpload = e => {
+   console.log(this.state.image)
+ }
 
 submit = e => {
   e.preventDefault();

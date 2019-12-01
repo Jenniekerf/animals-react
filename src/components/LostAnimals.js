@@ -8,7 +8,7 @@ const lostAnimals = props.animals.filter(function (animal) {
 })
 
   if (lostAnimals.length === 0) {
-    return <p id="alert">There are currently no animals added</p>
+    return <p id="alert" className="lostandfound-wrapper">There are currently no animals added</p>
   }
      return (
       <div className="lostandfound-wrapper">
